@@ -1,0 +1,146 @@
+.user-profile-wrapper
+  $profile-wrapper-width: 500px
+  $user-info-height: 80px
+  $user-stat-height: 100px
+  $avatar-width: 128px
+  $avatar-border: 5px
+
+  @extend %m0auto
+  width: $profile-wrapper-width
+  background-color: #dedede
+  +border-radius(15px)
+  border: 1px solid #fff
+  +box-shadow(0 2px 5px rgba(#000, .3))
+
+  .user-info-row
+    +clearfix
+    position: relative
+    border-bottom: 1px solid #bbb
+    .avatar-box
+      +span(2 of 5)
+      height: $user-info-height
+      // background-color: #aaa
+    .avatar
+      display: block
+      width: $avatar-width
+      @extend %m0auto
+      margin-top: 20px
+      +border-radius(50%)
+      border: $avatar-border solid #fff
+      +box-shadow(0 0 0 2px #bbb)
+    .info-box
+      height: $user-info-height
+      padding-top: 30px
+      +span(3 of 5)
+      .name
+        font-size: $fz-xl
+        font-weight: 900
+        color: $brown
+    .fav-btn
+      position: absolute
+      top: 50%
+      right: 1em
+      +transform(translateY(-50%))
+      color: $red
+      font-size: $fz-xl
+  .user-stat-row
+    +clearfix
+    position: relative
+    // height: $user-stat-height
+    .decoration-box
+      +span(2 of 6)
+      height: $user-stat-height
+    .stats-wrapper
+      +span(4 of 6)
+      height: $user-stat-height
+      padding: .5em 0
+    .tweets-box, .follower-box, .following-box
+      +span(1 of 3)
+      padding-top: 1em
+      text-align: center
+      font-size: $fz-l
+      font-weight: 900
+      color: $brown
+      .number
+        display: block
+        margin-bottom: .2em
+      .type
+        font-size: $fz-xs
+        color: $red
+    .follower-box
+      border-left: 1px solid #bbb
+      border-right: 1px solid #bbb
+      height: $user-stat-height - 16px
+
+  .message-input-row
+    position: relative
+    padding: 1em
+    background-color: $white
+    +border-bottom-radius(15px)
+    border-top: 1px solid #bbb
+    overflow: hidden
+    .message
+      +reset-focus
+      width: 100%
+      height: 1.3em
+      border: none
+      resize: none
+      +transition(all, .3s)
+      &:focus
+        height: 10em
+    .submit
+      +sassy-button("flat", 5px, $fz-s, #4ba3cc)
+      display: none
+      position: absolute
+      right: .5em
+      bottom: .5em
+      padding: .6em
+      opacity: 0
+      &.actived
+        display: block
+        opacity: 1
+
+.message-container
+  $msg-unit-width: 800px
+  $info-col-height: 50px
+
+  .title
+    padding: 0
+    margin: 0
+    margin-top: 2em
+    margin-bottom: 1em
+    padding-bottom: .2em
+    border-bottom: 5px solid lighten($brown, 20)
+    text-align: center
+    color: $brown
+    font-size: $fz-xxl
+
+  .message-unit
+    +clearfix
+    width: $msg-unit-width
+    @extend %m0auto
+    margin-top: 1em
+    .info-col
+      +span(2 of 7)
+      // padding-top: 1em
+      .avatar-box
+        +span(2 of 6)
+        width: $info-col-height
+        .avatar
+          max-width: 100%
+          +border-radius(50%)
+          border: 5px solid $white
+          +box-shadow(0 0 3px #888)
+      .name-box
+        +span(4 of 6)
+        height: $info-col-height
+        line-height: $info-col-height
+        padding-left: 1em
+        color: $brown
+        font-size: $fz-m
+        font-weight: 900
+    .message-col
+      +span(5 of 7)
+      background-color: rgba($white, .7)
+      padding: 1em
+      +border-radius(15px)

@@ -1,1 +1,67 @@
-FrontEnd UI preview
+<div class="q-container">
+
+  <!-- profile -->
+  <div class="user-profile-wrapper">
+
+    <!-- info -->
+    <div class="user-info-row">
+      <div class="avatar-box">
+        <%= image_tag 'avatar.jpg', class: 'avatar' %>
+      </div>
+      <div class="info-box">
+        <span class="name">David Bowie</span>
+      </div>
+      <a href="#" class="fav-btn">
+        <%= icon 'heart-o' %>
+      </a>
+    </div>
+
+    <!-- stats -->
+    <div class="user-stat-row">
+      <div class="decoration-box">
+
+      </div>
+      <div class="stats-wrapper">
+        <div class="tweets-box">
+          <span class="number"><%= number_with_delimiter rand(9999) %></span>
+          <span class="type">TWEETS</span>
+        </div>
+        <div class="follower-box">
+          <span class="number"><%= number_with_delimiter rand(9999) %></span>
+          <span class="type">FOLLOWERS</span>
+        </div>
+        <div class="following-box">
+          <span class="number"><%= number_with_delimiter rand(9999) %></span>
+          <span class="type">FOLLOWING</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="message-input-row" action="#">
+      <textarea class="message" name="" id="" placeholder="說些什麼吧..."></textarea>
+      <button class="submit"><%= icon 'send' %> 送出留言</button>
+    </form>
+
+  </div><!-- e/o profile -->
+
+  <div class="message-container">
+    <h3 class="title">Messages</h3>
+
+    <% 5.times.each do %>
+      <div class="message-unit">
+        <div class="info-col">
+          <div class="avatar-box">
+            <%= image_tag 'avatar.jpg', class: 'avatar' %>
+          </div>
+          <div class="name-box">
+            <span>David Bowie</span>
+          </div>
+        </div>
+        <div class="message-col">
+          <span>123</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
