@@ -9,6 +9,10 @@
 ## -------------------------------------
 #= require jquery
 #= require jquery_ujs
+#= require classnames
+#= require react
+#= require react_ujs
+#= require components
 #= require bootstrap
 #= require growlyflash
 #= require sweet-alert-confirm
