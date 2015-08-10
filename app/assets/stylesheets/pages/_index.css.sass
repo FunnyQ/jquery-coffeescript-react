@@ -96,9 +96,13 @@
       bottom: .5em
       padding: .6em
       opacity: 0
+      +transition(all, .5s)
       &.actived
         display: block
         opacity: 1
+      &.disabled
+        opacity: .6
+        cursor: not-allowed
 
 .message-container
   $msg-unit-width: 800px
