@@ -11,8 +11,8 @@
       <div class="info-box">
         <span class="name">David Bowie</span>
       </div>
-      <a href="#" class="fav-btn">
-        <%= icon 'heart-o' %>
+      <a href="#" class="fav-btn" data-behavior="fav-button">
+        <%= icon 'heart-o', data: {behavior: 'icon'} %>
       </a>
     </div>
 
@@ -22,7 +22,7 @@
 
       </div>
       <div class="stats-wrapper">
-        <div class="tweets-box">
+        <div class="tweets-box" data-behavior="tweets">
           <span class="number"><%= number_with_delimiter rand(9999) %></span>
           <span class="type">TWEETS</span>
         </div>
@@ -37,9 +37,9 @@
       </div>
     </div>
 
-    <form class="message-input-row" action="#">
-      <textarea class="message" name="" id="" placeholder="說些什麼吧..."></textarea>
-      <button class="submit"><%= icon 'send' %> 送出留言</button>
+    <form class="message-input-row" action="#" data-behavior="message-form">
+      <textarea class="message" name="" id="" placeholder="說些什麼吧..." data-behavior="textarea"></textarea>
+      <button class="submit" data-behavior="submit"><%= icon 'send' %> 送出留言</button>
     </form>
 
   </div><!-- e/o profile -->
@@ -65,3 +65,11 @@
   </div>
 
 </div>
+
+<%= content_for :handwrite_js do %>
+  <script>
+    $(document).ready(NotTwitter.favBtnInit);
+    $(document).ready(NotTwitter.inputInit);
+
+  </script>
+<% end %>
