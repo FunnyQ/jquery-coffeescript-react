@@ -47,29 +47,30 @@
   <div class="message-container">
     <h3 class="title">Messages</h3>
 
-    <% 5.times.each do %>
-      <div class="message-unit">
-        <div class="info-col">
-          <div class="avatar-box">
-            <%= image_tag 'avatar.jpg', class: 'avatar' %>
+    <div class="messages-wrapper" data-behavior="messages">
+      <% 1.times.each do %>
+        <div class="message-unit">
+          <div class="info-col">
+            <div class="avatar-box">
+              <%= image_tag 'avatar.jpg', class: 'avatar' %>
+            </div>
+            <div class="name-box">
+              <span>David Bowie</span>
+            </div>
           </div>
-          <div class="name-box">
-            <span>David Bowie</span>
+          <div class="message-col">
+            <span>123</span>
           </div>
         </div>
-        <div class="message-col">
-          <span>123</span>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
 </div>
 
 <%= content_for :handwrite_js do %>
   <script>
-    $(document).ready(NotTwitter.favBtnInit);
-    $(document).ready(NotTwitter.inputInit);
+    $(document).ready(new NotTwitter.UserProfile);
 
   </script>
 <% end %>
