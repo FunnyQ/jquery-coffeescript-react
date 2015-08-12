@@ -2,19 +2,14 @@
   displayName: 'UserProfile'
 
   getDefaultProps: ->
-      userName: 'David Bowie'
-      tweets: 0
-      followers: 23
-      following: 51
-      messages: [
-        {id: 1, userName: 'Q', message: 'this is a test'},
-        {id: 2, userName: 'winwin', message: 'this is a test, too'},
-      ]
+      user: []
+      messages: []
 
   getInitialState: ->
     actived: false
     text: ""
-    tweets: @props.tweets
+    user: @props.user
+    tweets: @props.user.tweets
     messages: @props.messages
 
   newMessage: (message) ->
@@ -27,9 +22,9 @@
     <div className="q-container">
       <div className="user-profile-wrapper">
 
-        <UserInfo />
+        <UserInfo user={@props.user} />
 
-        <UserStats tweets={@state.tweets} followers={@props.followers} following={@props.following} />
+        <UserStats tweets={@state.tweets} followers={@props.user.followers} following={@props.user.following} />
 
         <MessageForm handleNewMessage={@newMessage} />
 
@@ -39,7 +34,7 @@
         <h3 className="title">Messages</h3>
           {
             for message in @state.messages
-              <MessageUnit userName={message.userName} message={message.message} />
+              <MessageUnit userName={message.name} userAvatar={message.avatar} message={message.message} />
           }
       </div>
     </div>

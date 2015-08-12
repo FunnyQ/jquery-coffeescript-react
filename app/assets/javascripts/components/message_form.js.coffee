@@ -21,8 +21,10 @@
       text: event.target.value
 
   handleSubmit: ->
-    @props.handleNewMessage {userName: 'David Bowie', message: "#{@state.text}"}
+    @props.handleNewMessage {name: 'David Bowie', message: "#{@state.text}"}
     React.findDOMNode(@refs.inputField).value = ''
+    @setState
+      text: ''
     @deactiveForm()
 
   render: ->

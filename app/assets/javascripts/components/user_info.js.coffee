@@ -16,10 +16,10 @@
 
     <div className="user-info-row">
       <div className="avatar-box">
-        <img className="avatar" src="/assets/avatar-4d57f0dd9681afa915dc78cd72c747b7b1d460ea628e76a1eb897f6db7c0bdae.jpg" alt="Avatar 4d57f0dd9681afa915dc78cd72c747b7b1d460ea628e76a1eb897f6db7c0bdae" />
+        <img className="avatar" src={@props.user.avatar} alt="Avatar 4d57f0dd9681afa915dc78cd72c747b7b1d460ea628e76a1eb897f6db7c0bdae" />
       </div>
       <div className="info-box">
-        <span className="name">David Bowie</span>
+        <span className="name">{@props.user.name}</span>
       </div>
       <a href="#" className="fav-btn" onClick={@triggerFav}>
         <i className={favIcon}></i>
