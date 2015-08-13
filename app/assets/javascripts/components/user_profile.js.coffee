@@ -7,7 +7,6 @@
 
   getInitialState: ->
     actived: false
-    text: ""
     user: @props.user
     tweets: @props.user.tweets
     messages: @props.messages
